@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import GeneradorData from '../../../components/GeneradorData';
 import SearchComponent from '../../../components/SearchComponent';
+import './personajes-page.css';; // Asegúrate de ajustar la ruta del archivo de estilos
 
 async function fetchAllUsers() {
   let allResults = [];
@@ -19,24 +20,31 @@ async function fetchAllUsers() {
 
 const PersonajesPage = () => {
   const [people, setPeople] = useState([]);
+  const [datosDeBusqueda, setDatosDeBusqueda] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const fetchedPeople = await fetchAllUsers();
       setPeople(fetchedPeople);
+      setDatosDeBusqueda(fetchedPeople);
     };
 
     fetchData();
   }, []);
 
+  const onChange = (results) => {
+    setDatosDeBusqueda(results);
+  };
+
   return (
     <div>
       <h1>Personajes</h1>
-      <SearchComponent setPeople={setPeople} />
-      <GeneradorData data={people} type="people" />
+      <SearchComponent setPeople={setPeople} people={people} onChangePeople={onChange} />
+      <GeneradorData data={datosDeBusqueda} type="people" />
     </div>
   );
 };
 
 export default PersonajesPage;
+
 

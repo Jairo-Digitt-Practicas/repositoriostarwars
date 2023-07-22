@@ -1,51 +1,30 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
+import React, {useState, useEffect} from 'react'
 
-const SearchComponent = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const router = useRouter();
+const SearchComponent = ({people, setPeople, onChangePeople}) => {
+  //setear los hooks useState
+  const [search, setSearch] = useState("")
 
-  const handleSearch = async () => {
-    if (searchTerm.trim() === '') {
-      return;
-    }
+  //funcion de busqueda
+  const searcher = (e) => {
+    setSearch(e.target.value)
+  }
 
-    try {
-      const response = await axios.get(`https://swapi.dev/api/people/?search=${searchTerm}`);
-      const { results } = response.data;
-      setSearchResults(results);
-    } catch (error) {
-      console.error('Error fetching search results:', error);
-    }
-  };
+  let results = people
 
-  const handlePersonClick = (person) => {
-    const userId = person.url.split('/').slice(-2, -1)[0];
-    router.push(`/users/${userId}`); 
-  };
-
+    //metodo de filtrado
+  useEffect(function () {
+    results = results.filter ((dato) =>
+    dato.name.toLowerCase().includes(search.toLocaleLowerCase())
+    ) 
+    onChangePeople(results)
+  }, [search])
+  
+  //renderizamos la vista
   return (
     <div>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-
-      <ul>
-        {searchResults.map((result) => (
-          <li key={result.url} onClick={() => handlePersonClick(result)}>
-            {result.name}
-          </li>
-        ))}
-      </ul>
+      <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'></input>
     </div>
-  );
-};
+  )
+}
 
-export default SearchComponent;
-
-
+export default SearchComponent
