@@ -1,26 +1,12 @@
 /* personajes-page.css */
-.personajes-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .people-grid {
-    display: flex;
-    background-color: #070606;
-    border: #070606;
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .person-card {
-    flex: 1;
-    background-color: #070606;
-    text-align: center;
-    border: #070606;
-    min-width: 200px;
-    padding: 10px;
-    /* Agrega cualquier otro estilo que desees para cada tarjeta de persona */
-  }
-  
+.flex-container div {
+  width: 120px;
+  height: 250px;
+  border: 1px solid #000000;
+}

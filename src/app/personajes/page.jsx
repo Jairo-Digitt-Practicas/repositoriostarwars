@@ -39,8 +39,10 @@ const PersonajesPage = () => {
   return (
     <div>
       <h1>Personajes</h1>
-      <SearchComponent setPeople={setPeople} people={people} onChangePeople={onChange} />
-      <GeneradorData data={datosDeBusqueda} type="people" />
+      <SearchComponent  setPeople={setPeople} people={people} onChangePeople={onChange} />
+        <div className="flex-container">
+        <GeneradorData data={datosDeBusqueda} type="people" />
+      </div>
     </div>
   );
 };
