@@ -19,7 +19,7 @@ function GeneradorData({ data, type }) {
   };
 
   return (
-    <div className="grid-container">
+    <div className="use-client-GeneradorData">
       {data.map((item) => {
         const numericData = extractNumericData(item.url);
 

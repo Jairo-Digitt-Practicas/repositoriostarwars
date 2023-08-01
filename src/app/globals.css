@@ -1,0 +1,39 @@
+@import './personajes/personajes-page.css';
+@import './benefactores/benefactores-page.css';
+@import './dataspecies/[id]/species-page.css';
+@import './especies/especies-page.css';
+@import './users/[id]/users.css';
+@import '../../components/GeneradorData.css';
+@import '../../components/Navigation.css';
+@import '../../components/SearchComponent.css';
+
+
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'); 
+  background-size: 100% auto;
+  background-repeat: repeat;
+}
+
+.use-client-container {
+  max-width: 420px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 6px;
+  justify-content: center;
+  text-align: center;
+}
+
+.use-client-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(247, 247, 247);
+}
+
+.use-client-flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  padding: 20px;
+  justify-items: center;
+}

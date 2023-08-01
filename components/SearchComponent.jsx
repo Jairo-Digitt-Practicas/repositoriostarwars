@@ -1,30 +1,36 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
 
-const SearchComponent = ({people, setPeople, onChangePeople}) => {
-  //setear los hooks useState
-  const [search, setSearch] = useState("")
+const SearchComponent = ({ people, setPeople, onChangePeople }) => {
+  // Setear los hooks useState
+  const [search, setSearch] = useState("");
 
-  //funcion de busqueda
+  // Funcion de busqueda
   const searcher = (e) => {
-    setSearch(e.target.value)
-  }
+    setSearch(e.target.value);
+  };
 
-  let results = people
+  let results = people;
 
-    //metodo de filtrado
-  useEffect(function () {
-    results = results.filter ((dato) =>
-    dato.name.toLowerCase().includes(search.toLocaleLowerCase())
-    ) 
-    onChangePeople(results)
-  }, [search])
-  
-  //renderizamos la vista
+  // Metodo de filtrado
+  useEffect(() => {
+    results = results.filter((dato) =>
+      dato.name.toLowerCase().includes(search.toLowerCase())
+    );
+    onChangePeople(results);
+  }, [search]);
+
+  // Renderizamos la vista
   return (
-    <div>
-      <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'></input>
+    <div className="search-container">
+      <input
+        value={search}
+        onChange={searcher}
+        type="text"
+        placeholder="Search"
+        className="form-control"
+      />
     </div>
-  )
-}
+  );
+};
 
-export default SearchComponent
+export default SearchComponent;

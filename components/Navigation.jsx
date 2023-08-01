@@ -1,23 +1,25 @@
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 function Navigation() {
   return (
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/personajes">Personajes</Link>
-          </li> 
-          <li>
-            <Link href="/especies">Especies</Link>
-          </li> 
-          <li>
-            <Link href="/benefactores">Benefactores</Link>
-          </li>
-        </ul>
-
-  )
+    <div className="nav-container-navigation">
+      <ul>
+        <li className="nav-item-navigation">
+          <Link href="/">Home</Link>
+        </li>
+        <li className="nav-item-navigation">
+          <Link href="/personajes">Personajes</Link>
+        </li>
+        <li className="nav-item-navigation">
+          <Link href="/especies">Especies</Link>
+        </li>
+        <li className="nav-item-navigation">
+          <Link href="/benefactores">Benefactores</Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
 
 export default Navigation;

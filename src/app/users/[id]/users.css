@@ -1,0 +1,44 @@
+.use-client-container-users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+  
+.use-client-title {
+  font-family: "Star Wars", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 44px;
+}
+
+.use-client-flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.use-client-GeneradorData img {
+  width: 200px;
+}
+
+.use-client-GeneradorData h2 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.use-client-container {
+  max-width: 420px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
+}
+
+.use-client-flex-container {
+  background-color: #464343;
+  padding: 10px;
+}

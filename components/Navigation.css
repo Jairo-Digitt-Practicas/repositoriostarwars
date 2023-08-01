@@ -1,0 +1,32 @@
+/* Estilos para el contenedor principal de la navegación */
+.nav-container-navigation {
+    background-color: #f8eaea;
+    background-image:  url('https://p4.wallpaperbetter.com/wallpaper/201/929/79/digital-art-star-wars-death-star-black-wallpaper-preview.jpg');
+    width: 100%;
+    height:250px;
+    padding: 25px;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif; 
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  
+  /* Estilos para los elementos de lista */
+  .nav-item-navigation {
+    display: inline-block;
+    margin-right: 200px;
+  }
+  
+  /* Estilo para el enlace activo */
+  .nav-link.active-navigation {
+    color: rgb(252, 0, 0); 
+    background-color: #d9f00f;
+  }
+  
+  /* Estilo para el enlace en hover */
+  .nav-link-navigation:hover {
+    color: black;
+    background-color: #ffffff;
+  }
+  

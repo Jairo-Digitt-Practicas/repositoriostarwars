@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import GeneradorData from '../../../components/GeneradorData';
 import SearchComponent from '../../../components/SearchComponent';
-import './personajes-page.css';; // Asegúrate de ajustar la ruta del archivo de estilos
 
 async function fetchAllUsers() {
   let allResults = [];
@@ -37,10 +36,10 @@ const PersonajesPage = () => {
   };
 
   return (
-    <div>
-      <h1>Personajes</h1>
-      <SearchComponent  setPeople={setPeople} people={people} onChangePeople={onChange} />
-        <div className="flex-container">
+    <div className="use-client-container">
+      <h1 className="use-client-title">Personajes</h1>
+      <SearchComponent setPeople={setPeople} people={people} onChangePeople={onChange} />
+      <div className="use-client-flex-container">
         <GeneradorData data={datosDeBusqueda} type="people" />
       </div>
     </div>
@@ -48,5 +47,3 @@ const PersonajesPage = () => {
 };
 
 export default PersonajesPage;
-
-

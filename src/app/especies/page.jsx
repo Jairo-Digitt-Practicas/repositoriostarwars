@@ -11,10 +11,11 @@ async function fetchUsers() {
 
 
    return (
-      <div>
-        <h1>Especies</h1>
-        <GeneradorData data={species} type="species" />
-        </div>
+      <div className='.use-client-container'>
+        <h1 className='use-client-title'>Especies</h1>
+        <div className='use-client-flex-container'></div>
+          <GeneradorData  data={species} type="species" />
+      </div>
    );
  }
  
