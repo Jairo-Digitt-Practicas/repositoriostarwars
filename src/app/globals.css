@@ -1,18 +1,28 @@
-@import './personajes/personajes-page.css';
-@import './benefactores/benefactores-page.css';
-@import './dataspecies/[id]/species-page.css';
-@import './especies/especies-page.css';
-@import './users/[id]/users.css';
-@import '../../components/GeneradorData.css';
-@import '../../components/Navigation.css';
-@import '../../components/SearchComponent.css';
-
-
 
 body {
-  background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'); 
+  background-image: url('https://apod.nasa.gov/apod/image/2308/M82_HubblePathak_8150.jpg'); 
   background-size: 100% auto;
   background-repeat: repeat;
+}
+
+.use-client-GeneradorData {
+  width: calc(50% - 3px);
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 1000px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.use-client-GeneradorData img {
+  width: 200px;
+}
+
+.use-client-GeneradorData h2 {
+  margin-top: 10px;
+  text-align: center;
 }
 
 .use-client-container {
@@ -28,12 +38,81 @@ body {
   font-size: 32px;
   font-weight: bold;
   color: rgb(247, 247, 247);
+  margin-bottom: 44px;
 }
 
 .use-client-flex-container {
+  background-color: #464343;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   max-width: 1200px;
   padding: 20px;
   justify-items: center;
+}
+
+
+.nav-container-navigation {
+  background-color: #f8eaea;
+  background-image:  url('https://p4.wallpaperbetter.com/wallpaper/201/929/79/digital-art-star-wars-death-star-black-wallpaper-preview.jpg');
+  width: 100%;
+  height:250px;
+  padding: 25px;
+  font-size: 24px;
+  font-family: 'Arial', sans-serif; 
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.nav-item-navigation {
+  display: inline-block;
+  margin-right: 200px;
+}
+
+.nav-link.active-navigation {
+  color: rgb(252, 0, 0); 
+  background-color: #d9f00f;
+}
+
+.nav-link-navigation:hover {
+  color: black;
+  background-color: #ffffff;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.benefactores-img {
+  width: 200px;
+}
+
+.use-client-flex-container-benefactores {
+  background-color: #464343;
+  display: grid;
+  gap: 20px;
+  max-width: 2000px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.use-client-container-benefactores {
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 6px;
+  justify-content: center;
+  text-align: center;
 }

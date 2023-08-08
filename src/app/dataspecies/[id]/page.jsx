@@ -21,10 +21,10 @@ const SpeciesPage = ({ params }) => {
   }, [params.id]);
 
   return (
-    <div className='use-client-container-species'>
-      <h1 className='use-client-title-species'>Species Details</h1>
-      <div className='use-client-flex-container-species'>
-        <div className='use-client-GeneradorData-species'>
+    <div className='use-client-container'>
+      <h1 className='use-client-title'>Species Details</h1>
+      <div className='use-client-flex-container'>
+        <div className='use-client-GeneradorData'>
           <h2>{species.name}</h2>
           <img
             src={`https://starwars-visualguide.com/assets/img/species/${params.id}.jpg`}

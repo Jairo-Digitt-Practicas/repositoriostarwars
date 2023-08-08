@@ -5,7 +5,7 @@ import SearchComponent from '../../../components/SearchComponent';
 
 async function fetchAllUsers() {
   let allResults = [];
-  let nextUrl = "https://swapi.py4e.com/api/people";
+  let nextUrl = "https://swapi.dev/api/people";
 
   while (nextUrl) {
     const res = await fetch(nextUrl);

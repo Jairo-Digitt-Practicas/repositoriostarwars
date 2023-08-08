@@ -1,20 +1,22 @@
 'use client'
 import React from 'react';
-import ReactPlayer from 'react-player';
-import video from '../assets/videos/Introducción.mp4';
 
 function IndexPage() {
   return (
-    <div>
-      <ul>
-        <li className="use-client-title ">
-        <h1 href="/">Repositorio Star Wars</h1>
-        </li>
-        <ReactPlayer
-        url={video}
-        controls/>
-      </ul>
+    <div className="use-client-title">
+      <h1 href="/">Repositorio Star Wars</h1>
+      <div>
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/JmPaVpU8_b0" 
+          title="YouTube video player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          >
+        </iframe>
+      </div>
     </div>
   );
 }
+
 export default IndexPage;

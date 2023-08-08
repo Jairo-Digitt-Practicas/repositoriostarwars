@@ -11,7 +11,6 @@ const BackgroundImage = () => {
         height: '100vh',
       }}
     >
-      {/* Contenido adicional del componente */}
     </div>
   );
 };
