@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import GeneradorData from '../../../components/GeneradorData';
 import SearchComponent from '../../../components/SearchComponent';
+import LoadingIndicator from '../../../components/LoadingIndicator';
 
 async function fetchAllUsers() {
   let allResults = [];
@@ -18,14 +19,21 @@ async function fetchAllUsers() {
 }
 
 const PersonajesPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [people, setPeople] = useState([]);
   const [datosDeBusqueda, setDatosDeBusqueda] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const fetchedPeople = await fetchAllUsers();
-      setPeople(fetchedPeople);
-      setDatosDeBusqueda(fetchedPeople);
+      try {
+        const fetchedPeople = await fetchAllUsers();
+        setPeople(fetchedPeople);
+        setDatosDeBusqueda(fetchedPeople);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setIsLoading(false);
+      }
     };
 
     fetchData();
@@ -40,7 +48,7 @@ const PersonajesPage = () => {
       <h1 className="use-client-title">Personajes</h1>
       <SearchComponent setPeople={setPeople} people={people} onChangePeople={onChange} />
       <div className="use-client-flex-container">
-        <GeneradorData data={datosDeBusqueda} type="people" />
+        {isLoading ? <LoadingIndicator /> : <GeneradorData data={datosDeBusqueda} type="people" />}
       </div>
     </div>
   );

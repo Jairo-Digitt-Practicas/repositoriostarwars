@@ -116,3 +116,19 @@ body {
   justify-content: center;
   text-align: center;
 }
+
+.loading-container {
+  color: rgb(247, 247, 247);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-container img {
+  width: 300px; 
+  height: auto;
+}
+
+.loading-container p {
+  margin-top: 10px;
+}
