@@ -23,6 +23,9 @@ const PeoplePage = ({ params }) => {
   return (
     <div className='use-client-container'>
       <h1 className='use-client-title'>People Details</h1>
+      <div>
+        <input></input>
+      </div>
       <div className='use-client-flex-container'>
         <div className='use-client-GeneradorData'>
           <h2>{people.name}</h2>
